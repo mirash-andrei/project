@@ -1,0 +1,49 @@
+<div class="rev_block " id="bx_1373509569_13310">
+    <div class="rev_block_head ">  
+    	<a href="/otzyvy/13310/" target="_blank">
+    		<h4 class="h4">
+            Очень благодарен Ларисе Владиславовне за проделанную работу. Она очень ответственный и компетентный риэлтор, профессионал своего дела. Была всегда очень приятна в общении, помогла советом. В итоге выбрали себе квартиру, которой остались очень довольны. Спасибо за работу!</h4>
+        </a>
+   
+    </div>
+     <div class="rmore">подробнее...</div>
+    <!-- end .rev_block_head -->
+    <div class="text_wrap">
+        <div class="text"></div>
+        <!-- end .text -->
+        <div class="clearfix">
+            <div class="rev_name">
+                <b>Вячеслав Олегович</b>
+                <small></small>
+            </div>
+            <!-- end .rev_name -->
+            <span class="time"></span>
+        </div>
+        <!-- end .clearfix -->
+    </div>
+    <!-- end .text_wrap -->
+</div>
+<script>
+$(function() {
+		  $(".rev_block .rev_block_head h4").each(function() {
+		    $(this).data('full', $(this).html());
+		    $(this).html($(this).html().substr(0, 70));
+				$(this).append('...');
+		  });
+
+
+		  $(".rev_block .rmore").click(function() {
+		    $(this).parents(".rev_block").toggleClass("active");
+		    $(this).toggleClass("act");
+
+		    if ($(this).is(".act")) {
+		      $(this).html("cвернуть");
+		      $(this).siblings('.rev_block_head').find('h4').html($(this).siblings('.rev_block_head').find('h4').data('full'));
+		    } else {
+		      $(this).html("подробнее...");
+		      $(this).siblings('.rev_block_head').find('h4').html($(this).siblings('.rev_block_head').find('h4').html().substr(0, 70));
+       $(this).siblings('.rev_block_head').find('h4').append('...');   
+		    }
+		  });
+		});
+    </script>
